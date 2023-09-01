@@ -1,0 +1,28 @@
+<div class="formulario">
+    <span>
+        Ultima actualización: {{ datos_personales.updated_at }}
+    </span>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario">            
+            
+            <label class="etiqueta-form">Nombre del curso</label>
+            {{ course_form.nombre_curso }}
+
+            <label class="etiqueta-form">Institución</label>
+            {{ course_form.institucion }}
+
+            <label class="etiqueta-form">Duración</label>
+            {{ course_form.duracion }}
+
+            <label class="etiqueta-form">Año de egreso</label>
+            {{ course_form.year_egreso }}
+
+            <hr>
+
+            <button type="submit" class="btn btn-success btn-lg" name="create">Guardar</button>
+        </div>
+    </form>
+
+</div>

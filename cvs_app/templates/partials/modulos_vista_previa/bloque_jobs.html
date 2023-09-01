@@ -1,0 +1,66 @@
+<div class="exp-laboral">
+    <h3>EXPERIENCIA LABORAL</h3>
+    {% for job in jobs %}
+        
+        <div class="cuerpo-contenido-container">
+            <div class="texto">
+                <div class="job-container">
+                    <span class="etiqueta">{{ job.empresa }} | {{ job.puesto }}</span><br>
+                    <div class="descripcion">
+                        {% if job.trabaja_actualmente == True %}
+
+                            {% if job.year_inicio != "" %}
+                                <span>Desde: {{ job.month_inicio }}/{{ job.year_inicio }} - Trabajando actualmente</span>
+                            {% else %}
+                                <span>Trabajando actualmente</span>
+                            {% endif %}
+                            <br>
+                        {% else %}
+
+                            {% if job.year_inicio != "" %}
+                                <span>Desde: {{ job.month_inicio }}/{{ job.year_inicio }}</span> {% if job.year_fin != "" %} <span> - Hasta: {{ job.month_fin }}/{{ job.year_fin }}</span>{% endif %}
+                            {% else %}
+                                {% if job.year_fin != "" %} 
+                                <span> Hasta: {{ job.month_fin }}/{{ job.year_fin }}</span>
+                                {% endif %}
+                            {% endif %}
+                            <br>
+                        {% endif %}
+
+                        {% if job.referencia_telefono != "" %}
+
+                            {% if job.referencia_nombre != "" %}
+                            
+                                <span>Referencia: {{ job.referencia_nombre }}</span> 
+                                
+                                {% if job.referencia_puesto != "" %}
+
+                                    - <span>{{ job.referencia_puesto }}</span> 
+
+                                {% endif %}
+
+                                {% if job.referencia_telefono != "" %}
+
+                                    {% if job.referencia_cod_area != "" %}
+                                        - Tel: <span>{{ job.referencia_cod_area }}</span>-<span>{{ job.referencia_telefono }}</span>
+                                    {% else %}
+                                        - Tel: <span>{{ job.referencia_telefono }}</span>
+                                    {% endif %}
+
+                                {% endif %}
+                                
+                            {% endif %}
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="botones-crud">
+                <a class="crud-editar" href="{% url 'update_job' id=job.id %}">Editar</a>
+                <a class="crud-eliminar" href="{% url 'delete_job' id=job.id %}">Eliminar</a>
+            </div>
+        </div>
+        
+    {% endfor %}
+</div>

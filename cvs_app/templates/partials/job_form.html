@@ -1,0 +1,62 @@
+<div class="formulario">
+    <span>
+        Ultima actualización: {{ datos_personales.updated_at }}
+    </span>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario">
+            
+            <label class="etiqueta-form">Empresa/Comercio/Familia:</label>
+            {{ job_form.empresa }}
+
+            <label class="etiqueta-form">Puesto o actividad:</label>
+            {{ job_form.puesto }}
+            
+            <label class="etiqueta-form">Mes y Año de inicio:</label>
+            <div class="container-job">
+                <div class="month-job">
+                    {{ job_form.month_inicio }}
+                </div>
+                <div class="year-job">
+                    {{ job_form.year_inicio }}
+                </div>
+            </div>
+
+            <label class="etiqueta-form">Mes y Año de fin:</label>
+            <div class="container-job">
+                <div class="month-job">
+            {{ job_form.month_fin }}
+                </div>
+                <div class="year-job">
+            {{ job_form.year_fin }}
+                </div>
+            </div>
+
+            <label class="etiqueta-form"> Trabaja actualmente? {{ job_form.trabaja_actualmente }} </label>
+
+            <label class="etiqueta-form">Referencia laboral:</label>
+            {{ job_form.referencia_nombre }}
+
+            <label class="etiqueta-form">Puesto de referencia laboral:</label>
+            {{ job_form.referencia_puesto }}
+
+            <label class="etiqueta-form">Teléfono referencia laboral:</label>
+            <div class="telefono">
+                <div class="cod">
+                    {{ job_form.referencia_cod_area }}
+                </div>
+                <div class="tel">
+                    {{ job_form.referencia_telefono }}
+                </div>
+
+            </div>
+
+
+            <hr>
+
+            <button type="submit" class="btn btn-success btn-lg" name="create">Guardar</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="dat-academicos">
+
+    <h3>DATOS ACADÉMICOS</h3>
+    {% for element in academic_data %}
+    <div class="cuerpo-contenido-container">
+        <div class="texto">
+
+            {% if element.nivel_id == 1 %}
+                <span class="etiqueta"> Estudios Primarios | {{ element.escuela }}</span>. <br>
+            {% elif element.nivel_id == 2 %}
+                <span class="etiqueta"> Estudios Secundarios | {{ element.escuela }}</span>. <br>
+            {% elif element.nivel_id == 3 %}
+                <span class="etiqueta"> Estudios Terciarios | {{ element.escuela }}</span>. <br>
+            {% elif element.nivel_id == 4 %}
+                <span class="etiqueta"> Estudios Universitarios | {{ element.escuela }}</span>. <br>
+            {% endif %}
+
+            <div class="descripcion">
+                {% if element.estado_id == 1 %}
+                    {% if element.titulo != "" %}
+                        <span > Título obtenido: {{ element.titulo }}</span>. <br>
+                    {% endif %}
+                {% elif element.estado_id == 3 %}
+                    {% if element.titulo != "" %}
+                        <span > {{ element.titulo }} (Incompleto)</span>. <br>
+                    {% else %}
+                        <span > Incompleto</span>. <br>
+                    {% endif %}
+                {% elif element.estado_id == 2 %}
+                    {% if element.titulo != "" %}
+                        <span > {{ element.titulo }} - Cursando actualmente</span>. <br>
+                    {% else %}
+                        <span > Cursando actualmente</span>. <br>
+                    {% endif %}
+                {% endif %}
+
+                {% if element.descripcion != "" %}
+                    <span > {{ element.descripcion }}</span> <br>
+                {% endif %}
+
+                {% if element.year_inicio != "" %}
+                    <span > Año de inicio: {{ element.year_inicio }}</span>
+                {% endif %}
+
+                {% if element.year_fin != "" %}
+                    <span > Año de egreso: {{ element.year_fin }}</span>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="botones-crud">
+            <a class="crud-editar" href="{% url 'update_academic_data' id=element.id %}">Editar</a>
+            <a class="crud-eliminar" href="{% url 'delete_academic_data' id=element.id %}">Eliminar</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>

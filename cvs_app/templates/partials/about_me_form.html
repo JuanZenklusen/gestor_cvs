@@ -1,0 +1,27 @@
+<div class="formulario">
+    <span>
+        Ultima actualización: {{ datos_personales.updated_at }}
+    </span>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario">
+            
+            
+            
+            <label class="etiqueta-form">Objetivos - {{ about_me_form.objetivo_imp }}(imprimir)</label>
+            {{ about_me_form.objetivo }}
+
+            <label class="etiqueta-form">Aptitudes - {{ about_me_form.aptitudes_imp }}(imprimir)</label>
+            {{ about_me_form.aptitudes }}
+
+            <label class="etiqueta-form">Habilidades - {{ about_me_form.habilidades_imp }}(imprimir)</label>
+            {{ about_me_form.habilidades }}
+
+            <hr>
+
+            <button type="submit" class="btn btn-success btn-lg" name="create">Guardar</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} CV de {{ user.username }} {% endblock %}
+
+
+{% block 'content' %}
+
+{% include 'partials/btn.html' %}
+
+<div>
+    
+</div>
+
+<div class="contenedor">
+
+    {% include 'partials/vista-previa.html' %}
+
+    {% include 'partials/course_form.html' %}
+
+    
+
+</div>
+{% endblock %}

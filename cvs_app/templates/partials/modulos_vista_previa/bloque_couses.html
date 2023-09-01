@@ -1,0 +1,51 @@
+<div class="capacitaciones">
+    <h3>CAPACITACIONES Y CERTIFICACIONES</h3>
+    {% for course in courses %}
+    <div class="cuerpo-contenido-container">
+        <div class="texto">
+            <span class="etiqueta">{{ course.nombre_curso }} {% if course.institucion != "" %} | {{ course.institucion }} {% endif %}</span>
+
+            {% if course.duracion == "" and course.year_egreso == "" %}
+
+            {% else %}
+
+                <div class="descripcion">
+
+                    {% if course.duracion != "" %}
+
+                        <span> Duración: {{ course.duracion }} 
+                            
+                            {% if course.year_egreso != "" %}
+                            
+                                - Año de egreso: {{ course.year_egreso }}</span>
+
+                            {% else %}
+
+                                </span>
+                            
+                            {% endif %}
+                    
+                    {% else %}
+
+                        {% if course.year_egreso != "" %}
+                            
+                            <span> Año de egreso: {{ course.year_egreso }}</span>
+                        
+                        {% endif %}
+                
+                    {% endif %}
+
+                </div>
+
+            {% endif %}
+
+
+        </div>
+        <div class="botones-crud">
+            <a class="crud-editar" href="{% url 'course_update' id=course.id %}">Editar</a>
+            <a class="crud-eliminar" href="{% url 'course_delete' id=course.id %}">Eliminar</a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>

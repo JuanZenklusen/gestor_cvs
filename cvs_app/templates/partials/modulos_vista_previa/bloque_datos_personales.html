@@ -1,0 +1,62 @@
+<hr>
+<h3>DATOS PERSONALES</h3>
+<span class="etiqueta"> DNI: </span> <span> {{ datos_personales.dni }} &nbsp &nbsp </span>
+
+{% if datos_personales.prefijo_cuil != None %}
+    {% if datos_personales.sufijo_cuil != None %}
+        <span class="etiqueta"> CUIL: </span> <span> {{ datos_personales.prefijo_cuil }}{{ datos_personales.dni }}{{ datos_personales.sufijo_cuil }}</span>
+    {% endif %}
+{% endif %}
+
+<br>
+
+{% if datos_personales.day != None %}
+    {% if datos_personales.month != None %}
+        {% if datos_personales.year != None %}
+            <span class="etiqueta"> Fecha de Nacimiento: </span> <span> {{ datos_personales.day }}/{{ datos_personales.month }}/{{ datos_personales.year }} </span> <br>
+        {% endif %}
+    {% endif %}
+{% endif %}
+
+{% if datos_personales.domicilio != "" %}
+    <span class="etiqueta"> Domicilio: </span> <span> {{ datos_personales.domicilio }} </span> <br>
+{% endif %}
+
+{% if datos_personales.imprime_estado_civil == True %}
+    {% if datos_personales.estado_civil != "" %}
+        <span class="etiqueta"> Estado civil: </span> <span> {{ datos_personales.estado_civil }} </span> <br>
+    {% endif %}
+{% endif %}
+
+
+{% if datos_personales.imprime_cantidad_hijos == True %}
+    {% if datos_personales.cantidad_hijos != "" %}
+        <span class="etiqueta"> Hijos: </span> <span> {{ datos_personales.cantidad_hijos }} </span> <br>
+    {% endif %}
+{% endif %}
+
+
+{% if datos_personales.localidad != "" %}
+    <span class="etiqueta"> Localidad: </span> <span> {{ datos_personales.localidad }} </span> <br>
+{% endif %}
+
+{% if datos_personales.provincia != "" %}
+    <span class="etiqueta"> Provincia: </span> <span> {{ datos_personales.provincia }} </span> <br>
+{% endif %}
+
+{% if datos_personales.nacionalidad != "" %}
+    <span class="etiqueta"> Nacionalidad: </span> <span> {{ datos_personales.nacionalidad }} </span> <br>
+{% endif %}
+
+<hr>
+<h3>CONTACTO</h3>
+
+{% if datos_personales.cod_area != None %}
+    {% if datos_personales.telefono != "" %}
+        <span class="etiqueta"> Teléfono: </span> <span> {{ datos_personales.cod_area }}-{{ datos_personales.telefono }} </span> <br>
+    {% endif %}
+{% endif %}
+
+<span class="etiqueta"> E-mail: </span> <span> {{ user.email }} </span> <br>
+
+

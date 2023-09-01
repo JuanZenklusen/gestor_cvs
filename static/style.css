@@ -1,0 +1,429 @@
+:root{
+    --body-background: linear-gradient(to right, #868f96 0%, #596164 100%);
+    --encabezado: #C9D6E8;
+    --datos-personales: #ECF4FF;
+    --texto-encabezado: #213D62;
+    --font-size-h3: 23px;
+    --font-size-text: 16px;
+    --font-size-input: 19px;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: var(--font-size-text);
+}
+
+body {
+    min-height: 80vh;  
+}
+
+.container{
+    border: 3px solid red;
+}
+
+.container .register-form{
+    width: 70%;
+    margin: auto;
+    border: 3px solid green;
+}
+
+.title{
+    width: 100%;
+    min-height: 50px;
+}
+
+.subtitle{
+    font-size: 25px;
+    text-align: center;
+    margin: none;
+    padding: none;
+}
+
+.img_perfil{
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu{
+    margin: auto;
+    width: 95vw;
+    height: 40px;
+    background-color: #d6d6d6;
+}
+
+footer{
+    border: 3px solid green;
+    min-height: 10vh;
+}
+
+
+.contenedor-botones{
+    min-height: 50px;
+    margin: auto;
+    display: flex;
+    width: 95vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    font-size: var(--font-size-h3);
+}
+
+.botones-menu-cv{
+    background-color: black;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+    font-size: 1rem;
+    min-width: 20%;
+}
+
+.botones-menu-cv:hover{
+    background-color: rgb(86, 0, 0);
+}
+
+.contenedor{
+    margin: auto;
+    display: grid;
+    width: 95vw;
+    gap: 10px;
+    grid-template-areas: "vista formulario";
+    grid-template-columns: 4fr 1fr;
+    border-radius: 10px;
+}
+
+.vista-previa{
+    grid-area: "vista";
+    overflow: hidden;
+}
+
+.formulario{
+    grid-area: "formulario";
+}
+
+.formulario .form-control{
+    padding: 8px 15px 3px 15px;
+    border: 2px solid rgb(159, 159, 159);
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: var(--font-size-input);
+}
+
+.encabezado-vista-previa{
+    display: grid;
+    width: 100%;
+    height: 200px;
+    grid-template-areas: "img datos";
+    grid-template-columns: 4fr 7fr;
+    background-color: var(--encabezado);
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-vista-previa{
+    grid-area: img;
+    height: 200px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado-texto{
+    grid-area: "datos";
+    height: 200px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado-texto h1{
+    text-align: center;
+    font-size: 45px;
+    color: var(--texto-encabezado);
+    font-weight: 700;
+}
+
+.cuerpo-cv{
+    margin: auto;
+    display: grid;
+    width: 100%;
+    /* height: 800px; */
+    grid-template-areas: "left rigth";
+    grid-template-columns: 4fr 7fr;
+    justify-content: center;
+    align-items: center;
+}
+
+/* izquierda del cv */
+.datos-personales{
+    grid-area: "left";
+    background-color: var(--datos-personales);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+}
+
+.datos-personales h3{
+    font-weight: 700;
+    color: var(--texto-encabezado);
+    font-size: var(--font-size-h3);
+}
+
+.datos-personales span{
+    font-size: var(--font-size-text);
+}
+
+/* derecha del cv */
+.cuerpo-contenido{
+    grid-area: "rigth";
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly ;
+}
+
+.cuerpo-contenido h3{
+    font-weight: 700;
+    color: var(--texto-encabezado);
+    font-size: var(--font-size-h3)
+}
+
+
+.etiqueta{
+    font-weight: 700;
+}
+
+.cuil{
+    display: grid;
+    display: 100%;
+    gap: 2px;
+    grid-template-areas: "pre dni suf";
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.cuil-prefijo{
+    grid-area: "pre";
+}
+
+.dni{
+    grid-area: "dni";
+}
+
+.cuil-sufijo{
+    grid-area: "suf";
+}
+
+.fecha-nacimiento{
+    display: grid;
+    gap: 2px;
+    grid-template-areas: "dd mm aaaa";
+    grid-template-columns: 2fr 2fr 3fr;
+}
+
+.day{
+    grid-column: "dd";
+}
+
+.mes{
+    grid-column: "mm";
+}
+
+.anio{
+    grid-column: "aaaa";
+}
+
+.etiqueta-form{
+    background-color: black;
+    color: white;
+    position: relative;
+    top: 7px; left: 10px;
+    padding: 3px 10px;
+    margin-top: 4px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.telefono{
+    display: grid;
+    gap: 2px;
+    grid-template-areas: "cod tel";
+    grid-template-columns: 1fr 2fr;
+}
+
+.cod{
+    grid-area: "cod";
+}
+
+.tel{
+    grid-area: "tel";
+}
+
+.container-estado-civil{
+    display: grid;
+    gap: 5px;
+    grid-template-areas: "estado imprime";
+    grid-template-columns: 1fr 1fr;
+}
+
+.estado-civil{
+    grid-area: "estado";
+}
+
+.imprime-estado-civil{
+    grid-area: "imprime";
+}
+
+.imprime-estado-civil span{
+    position: relative;
+    top: 40px; left: 5px;
+}
+
+
+.container-hijos{
+    display: grid;
+    gap: 5px;
+    grid-template-areas: "hijos imprim";
+    grid-template-columns: 1fr 1fr;
+}
+
+.hijos{
+    grid-area: "hijos";
+}
+
+.imprime_hijos{
+    grid-area: "imprim";
+}
+
+.imprime_hijos span{
+    position: relative;
+    top: 40px; left: 5px;
+}
+
+.editar-btn{
+    text-decoration: none;
+    color: white;
+    background-color: var(--texto-encabezado);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: var(--font-size-text);
+    height: auto;
+}
+
+.editar-btn:hover{
+    background-color: #003bbb;
+}
+
+.borrar-btn{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(160, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: var(--font-size-text);
+}
+
+.container-btn-delete-academic-data{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: space-evenly;
+}
+
+.delete-academic-alert{
+    background-color: #960000;
+    color: white;
+    font-size: 20px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.delete-academic-data{
+    color: rgb(151, 0, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.cuerpo-contenido-container{
+    display: grid;
+    gap: 5px;
+    grid-template-areas: "txt crud";
+    grid-template-columns: 9fr 1fr;
+    margin-top: 8px;
+}
+
+.cuerpo-contenido-container{
+    grid-area: "txt";
+}
+
+.botones-crud{
+    grid-area: "crud";
+}
+
+.botones-crud .crud-editar{
+    color: rgb(37, 37, 182);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.botones-crud .crud-editar:hover{
+    font-weight: 700;
+    font-size: var(--font-size-input);
+}
+
+.botones-crud .crud-eliminar{
+    color: rgb(196, 36, 36);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.botones-crud .crud-eliminar:hover{
+    font-weight: 700;
+    font-size: var(--font-size-input);
+}
+
+.descripcion{
+    margin-left: 20px;
+}
+
+.academic-form-duracion{
+    display: grid;
+    display: 100%;
+    gap: 5px;
+    grid-template-areas: "inicio fin";
+    grid-template-columns: 1fr 1fr;
+}
+
+.academic-form-duracion .inicio{
+    grid-area: "inicio";
+}
+
+.academic-form-duracion .fin{
+    grid-area: "fin";
+}
+
+.form-control-file{
+    width: 100%;
+}
+
+.container-job{
+    display: grid;
+    display: 100%;
+    gap: 5px;
+    grid-template-areas: "mm aa";
+    grid-template-columns: 1fr 2fr;
+}
+
+.month-job{
+    grid-area: "mm";
+}
+
+.year-job{
+    grid-area: "aa";
+}

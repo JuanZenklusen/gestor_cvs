@@ -1,0 +1,40 @@
+<div class="formulario">
+    <span>
+        Ultima actualización: {{ datos_personales.updated_at }}
+    </span>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario">
+
+            {{ academic_form.nivel }}
+
+            {{ academic_form.estado }}
+
+            <label class="etiqueta-form">Institución/Universidad:</label>
+            {{ academic_form.escuela }}
+
+            <label class="etiqueta-form">Carrera/Título:</label>
+            {{ academic_form.titulo }}
+
+            <label class="etiqueta-form">Descripción:</label>
+            {{ academic_form.descripcion }}
+
+            <div class="academic-form-duracion">
+                <div class="inicio">
+                    <label class="etiqueta-form">Año inicio:</label>
+                    {{ academic_form.year_inicio }}
+                </div>
+                <div class="fin">
+                    <label class="etiqueta-form">Año egreso:</label>
+                    {{ academic_form.year_fin }}
+                </div>
+            </div>
+
+            <hr>
+
+            <button type="submit" class="btn btn-success btn-lg">Guardar</button>
+        </div>
+    </form>
+
+</div>

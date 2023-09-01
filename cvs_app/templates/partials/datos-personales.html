@@ -1,0 +1,120 @@
+<div class="formulario">
+    <span>
+        Ultima actualización: {{ datos_personales.updated_at }}
+    </span>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario">
+            
+            <div class="container-imagen">
+                <div>
+                    <label>Cambiar foto de perfil:</label><br>
+                    {{ profile_form.foto }}
+                </div>
+            </div>
+            
+            <label class="etiqueta-form">Nombre:</label>
+            {{ user_form.first_name }}
+
+            <label class="etiqueta-form">Apellido:</label>
+            {{ user_form.last_name }}
+
+
+            <label class="etiqueta-form">Email:</label>
+            {{ user_form.email }}
+
+            <label class="etiqueta-form">CUIL:</label><br>
+            <div class="cuil">
+
+                <div class="cuil-prefijo">
+                    {{ profile_form.prefijo_cuil }}
+                </div>
+                <div class="dni">
+                    {{ profile_form.dni }}
+                </div>
+                <div class="cuil-sufijo">
+                    {{ profile_form.sufijo_cuil }}
+                </div>
+
+            </div>
+
+            <label class="etiqueta-form">Fecha de nacimiento:</label><br>
+            <div class="fecha-nacimiento">
+                <div class="dia">
+                    {{ profile_form.day }}
+                </div>
+
+                <div class="mes">
+                    {{ profile_form.month }}
+                </div>
+
+                <div class="anio">
+                    {{ profile_form.year }}
+                </div>
+            </div> 
+
+            <label class="etiqueta-form">Contacto telefónico</label>
+            <div class="telefono">
+                <div class="cod">
+                    {{ profile_form.cod_area }}
+                </div>
+                <div class="tel">
+                    {{ profile_form.telefono }}
+                </div>
+            </div>
+
+            <label class="etiqueta-form">Domicilio:</label>
+            {{ profile_form.domicilio }}
+
+            <label class="etiqueta-form">Localidad:</label>
+            {{ profile_form.localidad }}
+
+            <label class="etiqueta-form">Provincia:</label>
+            {{ profile_form.provincia }}
+
+            <label class="etiqueta-form">Nacionalidad:</label>
+            {{ profile_form.nacionalidad }}
+
+            <label class="etiqueta-form">Genero:</label>
+            {{ profile_form.genero }}
+
+            <div class="container-estado-civil">
+
+                <div class="estado-civil">
+                    <label class="etiqueta-form">Estado civil:</label>
+                    {{ profile_form.estado_civil }}
+
+                </div>
+
+                <div class="imprime-estado-civil">
+                    <span>{{ profile_form.imprime_estado_civil }} Se imprime</span> 
+
+                </div>
+
+
+            </div>
+
+            <div class="container-hijos"> 
+
+                <div class="hijos">
+                    <label class="etiqueta-form">Hijos:</label>
+                    {{ profile_form.cantidad_hijos }}
+
+                </div>
+
+                <div class="imprime_hijos">
+                    <span>{{ profile_form.imprime_cantidad_hijos }} Se imprime</span>
+                    
+                </div>
+                
+                
+            </div>
+            
+            <hr>
+
+            <button type="submit" class="btn btn-success btn-lg" name="create">Guardar</button>
+        </div>
+    </form>
+
+</div>

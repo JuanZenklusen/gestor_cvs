@@ -1,0 +1,22 @@
+<div class="formulario">
+    <span>
+        Ultima actualización: {{ datos_personales.updated_at }}
+    </span>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario">
+
+            <p class="delete-academic-alert">¿Realmente quiere eliminar este campo?</p>
+            <p class="delete-academic-data">"Capacitacion: {{ delete_course.nombre_curso }}"</p>
+            <p class="delete-academic-data">"Institución: {{ delete_course.institucion }}"</p>
+            
+
+            <div class="container-btn-delete-academic-data">
+                <button type="submit" class="btn btn-danger btn-lg">Eliminar</button>
+                <a class="btn btn-secondary btn-lg" href="{% url 'profile' %}">Volver</a>
+            </div>
+        </div>
+    </form>
+
+</div>

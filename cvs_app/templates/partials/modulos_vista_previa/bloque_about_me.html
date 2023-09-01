@@ -1,0 +1,25 @@
+<hr>
+
+{% if about_me.id != None %}
+    {% if about_me.objetivo_imp == True %}
+        <h3> OBJETIVO LABORAL </h3>
+        <span>{{ about_me.objetivo }}</span>
+        <hr>
+    {% endif %}
+{% endif %}
+
+{% if about_me != None %}
+    {% if about_me.aptitudes_imp == True %}
+        <h3> APTITUDES </h3>
+        <span>{{ about_me.aptitudes }}</span>
+        <hr>
+    {% endif %}
+{% endif %}
+
+{% if about_me != None %}
+    {% if about_me.habilidades_imp == True %}
+        <h3> HABILIDADES </h3>
+        <span>{{ about_me.habilidades }}</span>
+        <hr>
+    {% endif %} 
+{% endif %}

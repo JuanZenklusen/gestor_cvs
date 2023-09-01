@@ -1,0 +1,48 @@
+<div class="vista-previa">
+    <div class="encabezado-vista-previa">
+        <div class="foto-vista-previa">
+            <img class="img_perfil" src="{{ user.profile.foto.url }} " />
+        </div>
+        <div class="encabezado-texto">
+            <h1>{{ user.last_name }} {{ user.first_name }}</h1>
+            {% for element in academic_data %}
+                {% if element.nivel_id == 4 %}
+                    {% if element.estado_id == 1 %}
+                        {% if element.titulo != "" %}
+                            <span class="subtitle"> {{ element.titulo }}</span>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="cuerpo-cv">
+        
+        <div class="datos-personales">
+            {% include 'partials/modulos_vista_previa/bloque_datos_personales.html' %}
+
+            {% include 'partials/modulos_vista_previa/bloque_about_me.html' %}
+        </div>
+
+
+        <div class="cuerpo-contenido">
+            <hr>
+            
+            {% include 'partials/modulos_vista_previa/bloque_jobs.html' %}
+            
+            <hr>
+
+            {% include 'partials/modulos_vista_previa/bloque_academic.html' %}
+            
+            <hr>
+            
+            {% include 'partials/modulos_vista_previa/bloque_couses.html' %}
+
+            <hr>
+
+        </div>
+    </div>
+
+
+</div>

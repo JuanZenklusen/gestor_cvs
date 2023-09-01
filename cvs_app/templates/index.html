@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} Inicio {% endblock %}
+
+{% block 'content' %}
+<h1>Hola estoy en el index</h1>
+
+<a class="btn btn-success btn-lg" href="{% url 'profile' %}">Ir a mi CV</a>
+
+{% endblock %}
